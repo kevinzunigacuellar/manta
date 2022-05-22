@@ -27,7 +27,7 @@ export default function Countdown() {
     return <HappyBirthday />
   }
   return (
-    <div className="bg-white/30 backdrop-blur p-6 rounded-lg">
+    <div className="bg-white/30 backdrop-blur p-6 rounded-lg shadow">
       <h1 className="text-xl font-semibold mb-4 text-gray-800">Sam's blowout starts in</h1>
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center">
         <NumberDisplay text="days" time={days} />
