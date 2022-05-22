@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import HappyBirthday from './HappyBirthday'
 import NumberDisplay from './NumberDisplay'
 
 const targetDate = new Date('March 18, 2023 0:0:0').getTime()
@@ -23,7 +24,7 @@ export default function Countdown() {
   const seconds = Math.floor((countdown % (1000 * 60)) / 1000)
 
   if (countdown <= 0) {
-    return <div>Time's up!</div>
+    return <HappyBirthday />
   }
   return (
     <div className="bg-white/30 backdrop-blur p-6 rounded-lg">
