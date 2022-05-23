@@ -18,10 +18,10 @@ export default function Countdown() {
     return () => clearTimeout(timeout)
   }, [countdown])
 
-  const days = Math.floor(countdown / (1000 * 60 * 60 * 24))
-  const hours = Math.floor((countdown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-  const minutes = Math.floor((countdown % (1000 * 60 * 60)) / (1000 * 60))
-  const seconds = Math.floor((countdown % (1000 * 60)) / 1000)
+  const days = Math.floor(countdown / (1000 * 60 * 60 * 24)).toString()
+  const hours = Math.floor((countdown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString()
+  const minutes = Math.floor((countdown % (1000 * 60 * 60)) / (1000 * 60)).toString()
+  const seconds = Math.floor((countdown % (1000 * 60)) / 1000).toString()
 
   if (countdown <= 0) {
     return <HappyBirthdayCard />
