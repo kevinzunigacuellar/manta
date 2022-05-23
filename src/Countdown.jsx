@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import HappyBirthday from './HappyBirthday'
+import HappyBirthdayCard from './HappyBirthdayCard'
 import NumberDisplay from './NumberDisplay'
 
 const targetDate = new Date('March 18, 2023 0:0:0').getTime()
@@ -24,17 +24,17 @@ export default function Countdown() {
   const seconds = Math.floor((countdown % (1000 * 60)) / 1000)
 
   if (countdown <= 0) {
-    return <HappyBirthday />
+    return <HappyBirthdayCard />
   }
   return (
-    <div className="bg-white/30 backdrop-blur p-6 rounded-lg shadow">
-      <h1 className="text-xl font-semibold mb-4 text-gray-800">Sam's blowout starts in</h1>
+    <main className="bg-white/30 backdrop-blur p-6 rounded-lg shadow">
+      <h1 className="text-xl font-semibold mb-4 text-slate-800">Sam's blowout starts in</h1>
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center">
         <NumberDisplay text="days" time={days} />
         <NumberDisplay text="hours" time={hours} />
         <NumberDisplay text="minutes" time={minutes} />
         <NumberDisplay text="seconds" time={seconds} />
       </div>
-    </div>
+    </main>
   )
 }

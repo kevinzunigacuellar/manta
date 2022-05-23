@@ -1,6 +1,6 @@
 import Confetti from 'react-confetti'
 
-export default function HappyBirthday() {
+export default function HappyBirthdayCard() {
   return (
     <>
       <Confetti width={window.innerWidth} height={window.innerHeight} />
