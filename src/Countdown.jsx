@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import HappyBirthdayCard from './HappyBirthdayCard'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import NumberDisplay from './NumberDisplay'
 
+const HappyBirthdayCard = lazy(() => import('./HappyBirthdayCard'))
 const targetDate = new Date('March 18, 2023 0:0:0').getTime()
 
 export default function Countdown() {
@@ -18,13 +18,18 @@ export default function Countdown() {
     return () => clearTimeout(timeout)
   }, [countdown])
 
+  // no need to memo this since they're primitive values
   const days = Math.floor(countdown / (1000 * 60 * 60 * 24)).toString()
   const hours = Math.floor((countdown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString()
   const minutes = Math.floor((countdown % (1000 * 60 * 60)) / (1000 * 60)).toString()
   const seconds = Math.floor((countdown % (1000 * 60)) / 1000).toString()
 
   if (countdown <= 0) {
-    return <HappyBirthdayCard />
+    return (
+      <Suspense fallback={null}>
+        <HappyBirthdayCard />
+      </Suspense>
+    )
   }
   return (
     <main className="bg-white/30 backdrop-blur p-6 rounded-lg shadow">
