@@ -33,7 +33,7 @@ export default function Countdown() {
   }
   return (
     <main className="bg-white/30 backdrop-blur p-6 rounded-lg shadow">
-      <h1 className="text-xl font-semibold mb-4 text-slate-800">Sam's blowout starts in</h1>
+      <h1 className="text-xl font-semibold mb-4 text-slate-800">Manta's birthday countdown</h1>
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center">
         <NumberDisplay text="days" time={days} />
         <NumberDisplay text="hours" time={hours} />
