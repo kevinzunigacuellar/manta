@@ -3,6 +3,7 @@ import NumberDisplay from './NumberDisplay'
 
 const HappyBirthdayCard = lazy(() => import('./HappyBirthdayCard'))
 const targetDate = new Date('March 18, 2024 0:0:0').getTime()
+// const targetDate = new Date('March 16, 2024 0:0:0').getTime()
 
 export default function Countdown() {
   const [countdown, setCountdown] = useState(targetDate - new Date().getTime())
